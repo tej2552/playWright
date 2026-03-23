@@ -45,4 +45,27 @@ This will apply it only to the specific spec level tests and not globally
 ________________________________________________________________________________________
 To capture video, screenshot and trace ->
 
-To do this we have to enable it globally in playwright.config.js file
+- To do this we have to enable it globally in playwright.config.js file
+
+- Code level screenshots can also be captured using screenshot(), where we pass the file 
+name, path as parameters
+_______________________________________________________________________________________
+CodeGen playwright -> 
+
+In playwright we have tool which generates the locators and script based on the action
+we do in the browser.
+
+To access this, we have to use the command - npx playwright codegen
+To explore the options which can be passed in this command, we can use 
+npx playwright codegen --help and explore
+_______________________________________________________________________________________
+Retrying the cases which fails ->
+
+Playwright gives this option as an inbuilt feature where we can configure it globally
+so that the script is automatically retried in case of failure.
+
+Or we can also pass it on the cmd line level. Suppose if we are unsure on the cases which we
+are about to run, then we can pass it in the cmd line as mentioned below
+
+npx playwright test --retries=3
+_______________________________________________________________________________________
