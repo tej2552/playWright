@@ -4,7 +4,11 @@ DISCLAIMER :- Where ever there is a global config changes shown in this doc, ple
 playwright.config.js file and check it as it has been implemented
 
 ***********************************************
+________________________________________________________________________________________
+To initialize the playwright framework ->
 
+npm init playwright@latest
+________________________________________________________________________________________
 npx playwright test -> 
 
 This is to run the tests. It will take all the 
@@ -12,14 +16,12 @@ test present in the folder mentioned in the playwright config and run
 them parallelly in the mentioned browser names in the config file.
 
 By default the tests run in headless mode
-
 ________________________________________________________________________________________
 npx playwright test --headed -> 
 
 This is to run the tests in headed mode. It will take all the 
 test present in the folder mentioned in the playwright config and run
 them parallelly in the mentioned browser names in the config file.
-
 ________________________________________________________________________________________
 npx playwright show-report ->
 
@@ -68,4 +70,12 @@ Or we can also pass it on the cmd line level. Suppose if we are unsure on the ca
 are about to run, then we can pass it in the cmd line as mentioned below
 
 npx playwright test --retries=3
+_______________________________________________________________________________________
+Locating and Selecting options from a dropdown
+
+There are 2 ways:
+
+- This works only if the dropdown is developed using select tag
+
+page.locator("//put the dropdown locator here//").selectOption("we can pass label, id, value here)
 _______________________________________________________________________________________

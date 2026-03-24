@@ -1,16 +1,30 @@
 {
+    "COMMON_ADDITION": {
+        "PRECEDING_SIBLING": "//preceding-sibling::",
+        "FOLLOWING_SIBLING": "//following-sibling::"
+    },
     "PLACE_HOLDERS": {
         "USERNAME": "Username",
-        "PASSWORD": "Password"
+        "PASSWORD": "Password",
+        "NAME": "Name",
+        "EMAIL": "Email"
     },
     "CSS": {
         "SUBMIT_BUTTON": "button[type='submit']",
-        "PROFILE_DROPDOWN": ".oxd-userdropdown-tab"
+        "PROFILE_DROPDOWN": ".oxd-userdropdown-tab",
+        "SELECT_HOBBIES": "#hobbies",
+        "CHOOSE_FILES": "#file-upload",
+        "FILE_SUBMIT": "#file-submit"
     },
     "TEXT": {
         "LOGOUT_BUTTON": "Logout"
     },
     "XPATH": {
-        "INVALID_CREDS": "//p[contains(.,'Invalid credentials')]"
+        "INVALID_CREDS": "//p[contains(.,'Invalid credentials')]",
+        "INTEREST_LABELS": "//label[text()='$$$']",
+        "GENDER_LABELS": "//label[text()='$$$']",
+        "SELECT_STATE": "//select[@id='state']",
+        "NAV_BAR_MENU": "//ul[@class='vl-flyout-nav__container']/li/a/span",
+        "UPLOADED_FILES": "//div[@id='uploaded-files']"
     }
 }
