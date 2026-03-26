@@ -1,9 +1,10 @@
 const { test, expect } = require("@playwright/test");
 const locators = require("../Locators/login.locators.json");
+import { URLS } from "../utils/urls.json";
 
 test("Login/Logout in the Dashboard", async ({ page }) => {
     // LOGIN
-    await page.goto("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+    await page.goto(URLS.ORANGE_HRM_LOGIN);
 
     await page.getByPlaceholder(locators.PLACE_HOLDERS.USERNAME).fill("Admin");
     //Suppose u want to type letter by letter slowly, then we can pass delay in the fill method.
@@ -24,7 +25,7 @@ test("Login/Logout in the Dashboard", async ({ page }) => {
 
 test("Invalid Login in the Dashboard", async ({ page }) => {
     // LOGIN
-    await page.goto("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+    await page.goto(URLS.ORANGE_HRM_LOGIN);
 
     await page.getByPlaceholder(locators.PLACE_HOLDERS.USERNAME).fill("Admin");
     await page.getByPlaceholder(locators.PLACE_HOLDERS.PASSWORD).fill("Admin123");

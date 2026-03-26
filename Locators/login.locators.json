@@ -25,6 +25,10 @@
         "GENDER_LABELS": "//label[text()='$$$']",
         "SELECT_STATE": "//select[@id='state']",
         "NAV_BAR_MENU": "//ul[@class='vl-flyout-nav__container']/li/a/span",
-        "UPLOADED_FILES": "//div[@id='uploaded-files']"
+        "UPLOADED_FILES": "//div[@id='uploaded-files']",
+        "GOOGLE_SEARCH_BAR": "//textarea[@name='q']",
+        "NAV_BAR_MENU_ELEMENT": "//span[text()='$$$']",
+        "ALERT_BUTTONS": "//li/button",
+        "ALERT_RESULT_PARAGRAPH": "//p[@id='result']"
     }
 }

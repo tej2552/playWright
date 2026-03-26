@@ -26,8 +26,54 @@ function constructXpathLocator(
     return null;
 }
 
+//Keyboard Actions
+async function clearInputField(page, copy = false) {
+    if (copy) {
+        await page.keyboard.press("Meta+A");
+        await page.keyboard.press("Meta+C");
+        await page.keyboard.press("Backspace");
+    }
+    await page.keyboard.press("Meta+A");
+    await page.keyboard.press("Backspace");
+}
+
+async function copy(page) {
+    await page.keyboard.press("Meta+C");
+}
+
+async function cut(page) {
+    await page.keyboard.press("Meta+X");
+}
+
+async function paste(page) {
+    await page.keyboard.press("Meta+V");
+}
+
+async function back(page) {
+    await page.keyboard.press("Backspace");
+}
+
+async function longPressSelect(page, word, inputLocator, direction) {
+    await page.locator(inputLocator).focus();
+    await page.keyboard.type(word);
+    await page.keyboard.press(`Arrow${direction}`);
+    await page.keyboard.down("Shift");
+    for (let i = word.length - 2; i >= 0; i--) {
+        if (word[i] === " ") {
+            break;
+        }
+        await page.keyboard.press(`Arrow${direction}`);
+    }
+    await page.keyboard.up("Shift");
+}
 
 module.exports = {
     constructXpathLocator,
     createSiblingXpath,
+    clearInputField,
+    longPressSelect,
+    paste,
+    back,
+    copy,
+    cut,
 };
