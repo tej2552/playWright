@@ -1,9 +1,10 @@
 const { test, expect } = require("@playwright/test");
 const locators = require("../Locators/login.locators.json");
 const functions = require("../Common/common.sign.up.actions.js");
+import { URLS } from "../utils/urls.json";
 
 test("Sign UP", async ({ page }) => {
-    await page.goto("https://freelance-learn-automation.vercel.app/signup");
+    await page.goto(URLS.VERCEL_SIGN_UP);
     await page.getByPlaceholder(locators.PLACE_HOLDERS.NAME).fill("Tejas");
     await page.getByPlaceholder(locators.PLACE_HOLDERS.EMAIL).fill("example@gmail.com");
     await page.getByPlaceholder(locators.PLACE_HOLDERS.PASSWORD).fill("Example123@Tejas");

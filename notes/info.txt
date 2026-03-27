@@ -71,11 +71,25 @@ are about to run, then we can pass it in the cmd line as mentioned below
 
 npx playwright test --retries=3
 _______________________________________________________________________________________
-Locating and Selecting options from a dropdown
+Locating and Selecting options from a dropdown -> 
 
 There are 2 ways:
 
 - This works only if the dropdown is developed using select tag
 
 page.locator("//put the dropdown locator here//").selectOption("we can pass label, id, value here)
+_______________________________________________________________________________________
+Keyboard Actions -> 
+
+page.keyboard.press(pass the key u want to press)
+_______________________________________________________________________________________
+Alerts in playwright ->
+
+In playwright, whenever we click on any button or any event triggers a alert, it is automatically 
+accepted. So we will not be able to do any validations on the alerts by default.
+
+To handle this we have to keep an event listener for dialog boxes in general and do all the assertions
+and Actions
+
+NOTE - The even listener should be implemented first before the alert is triggered.
 _______________________________________________________________________________________

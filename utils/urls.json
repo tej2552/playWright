@@ -1,0 +1,12 @@
+{
+    "URLS": {
+        "GOOGLE": "https://www.google.com/",
+        "ORANGE_HRM_LOGIN": "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login",
+        "VERCEL_SIGN_UP": "https://freelance-learn-automation.vercel.app/signup",
+        "FILE_UPLOAD": "https://the-internet.herokuapp.com/upload",
+        "EBAY": "https://www.ebay.com/",
+        "JS_ALERTS": "https://the-internet.herokuapp.com/javascript_alerts",
+        "JAVA_DOC": "https://docs.oracle.com/javase/8/docs/api/",
+        "VERCEL_LOGIN": "https://freelance-learn-automation.vercel.app/login"
+    }
+}
