@@ -85,11 +85,11 @@ page.keyboard.press(pass the key u want to press)
 _______________________________________________________________________________________
 Alerts in playwright ->
 
-In playwright, whenever we click on any button or any event triggers a alert, it is automatically 
+In playwright, whenever we click on any button or any event triggers an alert, it is automatically 
 accepted. So we will not be able to do any validations on the alerts by default.
 
 To handle this we have to keep an event listener for dialog boxes in general and do all the assertions
 and Actions
 
-NOTE - The even listener should be implemented first before the alert is triggered.
+NOTE - The event listener should be implemented first before the alert is triggered.
 _______________________________________________________________________________________
