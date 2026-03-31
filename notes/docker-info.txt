@@ -1,0 +1,83 @@
+First write a docker file with all the instructions
+
+The docker file in this project is completely basic which 
+specifies a web server to host the website and copying the 
+src code file from local to a folder inside the image
+__________________________________________________________
+Now build an image inside the project using cmd
+docker build .
+This creates an image with a random ID
+__________________________________________________________
+Now once the image is created, we can view it using the cmd
+docker images 
+or
+docker image ls
+__________________________________________________________
+Once the image is created, containerize it using the command
+docker run -d -p <port number> <image_id>
+
+Here -d specifies it to be a daemon process
+-p specifies it to configure the port number
+__________________________________________________________
+Pushing your image to docker hub
+
+To do this first we have to create a repository in the docker hub
+once that is done, we have to login to docker in our project
+
+docker login
+This should return the username and login succeeded message.
+
+Now that we have logged in
+
+if the docker build id built for your project then you can directly push it
+if not you have to build it, tag it and then push it
+
+if not tagged, - docker tag <image_id_or_name> <username>/<repo-name>:<tag>
+
+docker push <username>/<repo-name>:<tag>
+
+NOTE - <username>/<repo-name>:<tag> is the image name when pushed to hub.
+_____________________________________________________________________________________________
+
+Just a small explanation on what exactly happens when we run an image
+
+Your command, step by step:
+docker run -d -p 8080:9323 -v my-reports:/app/playwright-report vagrant25/my-repo:latest 
+npx playwright show-report --host 0.0.0.0 --port 9323
+
+docker run -d
+Runs the container in detached mode (in the background).
+
+-p 8080:9323
+Maps host port 8080 → container port 9323.
+So when you visit http://localhost:8080 on your host, Docker forwards traffic to the container’s port 9323.
+
+-v my-reports:/app/playwright-report
+Mounts the host volume my-reports to the container path /app/playwright-report.
+Data written by Playwright will persist on your host, and you can also read existing reports.
+
+vagrant25/my-repo:latest
+The Docker image to run.
+
+npx playwright show-report
+Overrides the default CMD of the image to run Playwright’s report server.
+
+--host 0.0.0.0
+Tells Playwright to listen on all network interfaces inside the container.
+Without this, the server would default to 127.0.0.1, making it unreachable from your host.
+
+--port 9323
+Tells Playwright which port to actually listen on inside the container.
+Must match the container side of -p 8080:9323.
+
+✅ One-liner explanation in plain English
+
+Run the container in the background, mount the reports folder so it persists on the host, 
+start the Playwright report server inside the container listening on all interfaces at port 9323,
+and forward traffic from host port 8080 to it.
+__________________________________________________________________________________________________________________________________
+Docker repository
+
+so i can use a repo to manage different versions of my same app or project, 
+and create a new repo for a new project
+__________________________________________________________________________________________________________________________________
